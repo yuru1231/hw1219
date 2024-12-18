@@ -1,0 +1,12 @@
+package p35;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+
+public class Sample5_7 {
+public static void main(String[] args) {
+	try {
+		FileWriter fw=new FileWriter("test1.txt");
+	}
+}
+}

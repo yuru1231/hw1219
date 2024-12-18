@@ -1,0 +1,33 @@
+package sample1;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class SimpleGUI {
+    public static void main(String[] args) {
+        Frame frame = new Frame("簡單的 GUI 範例");
+        Label label = new Label("按下按鈕後會改變文字", Label.CENTER);
+        Button button = new Button("按我");
+        
+        // 設置 Frame 佈局
+        frame.setLayout(new BorderLayout());
+        frame.add(label, BorderLayout.CENTER);
+        frame.add(button, BorderLayout.SOUTH);
+        frame.setSize(300, 150);
+        frame.setVisible(true);
+        
+        // 關閉視窗事件
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+
+        // 按鈕點擊事件
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                label.setText("你按下了按鈕！");
+            }
+        });
+    }
+}
